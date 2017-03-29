@@ -42,4 +42,7 @@
 *.pdb
 *.tlog
 *.filters
+<<<<<<< HEAD
 *.ilk
+=======
+>>>>>>> origin/master
