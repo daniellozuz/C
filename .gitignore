@@ -31,3 +31,13 @@
 # Debug files
 *.dSYM/
 *.su
+
+# My ingores
+*.sdf
+*.sln
+*.suo
+*.vcxproj
+*.log
+*.idb
+*.pdb
+*.tlog
