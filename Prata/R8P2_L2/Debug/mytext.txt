@@ -1,0 +1,1 @@
+Nie powiniene˜ mie† problem¢w z przyswojeniem funkcji ka¾dego z operator¢w przekierowania. Zapami©taj po prostu, ¾e ka¾dy operator jest zwr¢cony w kierunku, w kt¢rym przepˆywaj¥ dane. Wyobra« sobie, ¾e masz do czynienia z lejkiem.
