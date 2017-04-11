@@ -1,0 +1,1 @@
+// Kompilator nie obsluguje VLA
