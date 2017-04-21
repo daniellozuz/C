@@ -1,0 +1,8 @@
+Druga kolumna.
+Wyswietla sie po prawej stronie.
+
+Mimo tego ze jest dluzsza.
+
+To program.
+I tak.
+Dziala ok.

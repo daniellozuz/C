@@ -1,0 +1,11 @@
+Przykladowy tekst.
+Szukamy w nim slowa tekst.
+
+W tym wierszu slowo tekst wystepuje.
+
+
+A w tym nie.
+
+    Pare spacji przed tekst.
+
+Koniec tekstu.
