@@ -3,12 +3,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <math.h>
 
 #define DL 50
 #define RZEDY 20
 #define KOLUMNY 30
 
-int ** usrednij(int wartosci[][KOLUMNY], int rzedy);
+void usrednij(int wartosci[RZEDY][KOLUMNY]);
 
 int main(void) {
 	FILE * fp;
@@ -39,7 +40,7 @@ int main(void) {
 		}
 	}
 
-	**wartosci = usrednij(wartosci, RZEDY);
+	usrednij(wartosci);
 
 	for (int j = 0; j < RZEDY; j++) {
 		for (i = 0; i < KOLUMNY + 1; i++) {
@@ -56,40 +57,44 @@ int main(void) {
 	return 0;
 }
 
-int ** usrednij(int wartosci[][KOLUMNY], int rzedy) {
+void usrednij(int wartosci[RZEDY][KOLUMNY]) {
 	int nowe_wartosci[RZEDY][KOLUMNY];
 
-	for (int j = 0; j < KOLUMNY; j++) {
-		for (int i = 0; i < RZEDY; i++) {
-			if (j > 0 && j < KOLUMNY - 1 && i > 0 && i < RZEDY - 1) {
-				nowe_wartosci[j][i] = (wartosci[j + 1][i] + wartosci[j - 1][i] + wartosci[j][i + 1] + wartosci[j][i - 1]) / 4;
+	for (int i = 0; i < KOLUMNY; i++) {
+		for (int j = 0; j < RZEDY; j++) {
+			if (j > 0 && j < RZEDY - 1 && i > 0 && i < KOLUMNY - 1) {
+				nowe_wartosci[j][i] = round((wartosci[j + 1][i] + wartosci[j - 1][i] + wartosci[j][i + 1] + wartosci[j][i - 1]) / 4);
 			}
 			else if (j == 0 && i == 0) {
-				nowe_wartosci[j][i] = (wartosci[j + 1][i] + wartosci[j][i + 1]) / 2;
+				nowe_wartosci[j][i] = round((wartosci[j + 1][i] + wartosci[j][i + 1]) / 2);
 			}
-			else if (j == 0 && i == RZEDY - 1) {
-				nowe_wartosci[j][i] = (wartosci[j + 1][i] + wartosci[j][i - 1]) / 2;
+			else if (j == 0 && i == KOLUMNY - 1) {
+				nowe_wartosci[j][i] = round((wartosci[j + 1][i] + wartosci[j][i - 1]) / 2);
 			}
-			else if (j == KOLUMNY - 1 && i == RZEDY - 1) {
-				nowe_wartosci[j][i] = (wartosci[j - 1][i] + wartosci[j][i - 1]) / 2;
+			else if (j == RZEDY - 1 && i == KOLUMNY - 1) {
+				nowe_wartosci[j][i] = round((wartosci[j - 1][i] + wartosci[j][i - 1]) / 2);
 			}
-			else if (j == KOLUMNY - 1 && i == 0) {
-				nowe_wartosci[j][i] = (wartosci[j - 1][i] + wartosci[j][i + 1]) / 2;
+			else if (j == RZEDY - 1 && i == 0) {
+				nowe_wartosci[j][i] = round((wartosci[j - 1][i] + wartosci[j][i + 1]) / 2);
 			}
 			else if (j == 0) {
-				nowe_wartosci[j][i] = (wartosci[j + 1][i] + wartosci[j][i + 1] + wartosci[j][i - 1]) / 3;
+				nowe_wartosci[j][i] = round((wartosci[j + 1][i] + wartosci[j][i + 1] + wartosci[j][i - 1]) / 3);
 			}
-			else if (j == KOLUMNY - 1) {
-				nowe_wartosci[j][i] = (wartosci[j - 1][i] + wartosci[j][i + 1] + wartosci[j][i - 1]) / 3;
+			else if (j == RZEDY - 1) {
+				nowe_wartosci[j][i] = round((wartosci[j - 1][i] + wartosci[j][i + 1] + wartosci[j][i - 1]) / 3);
 			}
 			else if (i == 0) {
-				nowe_wartosci[j][i] = (wartosci[j + 1][i] + wartosci[j][i + 1] + wartosci[j - 1][i]) / 3;
+				nowe_wartosci[j][i] = round((wartosci[j + 1][i] + wartosci[j][i + 1] + wartosci[j - 1][i]) / 3);
 			}
-			else if (i == RZEDY - 1) {
-				nowe_wartosci[j][i] = (wartosci[j + 1][i] + wartosci[j][i - 1] + wartosci[j - 1][i]) / 3;
+			else if (i == KOLUMNY - 1) {
+				nowe_wartosci[j][i] = round((wartosci[j + 1][i] + wartosci[j][i - 1] + wartosci[j - 1][i]) / 3);
 			}
 		}
 	}
 
-	return nowe_wartosci;
+	for (int i = 0; i < KOLUMNY; i++) {
+		for (int j = 0; j < RZEDY; j++) {
+			wartosci[j][i] = nowe_wartosci[j][i];
+		}
+	}
 }

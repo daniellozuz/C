@@ -1,9 +1,6 @@
 Oto plik testowy.
 Nie zawiera on polskich znakow.
 Mam nadzieje ze wszystko dziala.
-Pozdro 600.
-Druga czesc plikow.
-
-Srodek.Druga czesc plikow.
+Pozdro 600.Druga czesc plikow.
 
 Srodek.No i koncowka :).

@@ -20,7 +20,7 @@ int main(void) {
 	puts("Podaj nazwe pliku docelowego:");
 	wczytaj(plik_doc, DLAN);
 
-	if ((pd = fopen(plik_doc, "a")) == NULL) {
+	if ((pd = fopen(plik_doc, "a+")) == NULL) {
 		fprintf(stderr, "Blad otwarcia %s\n", plik_doc);
 		exit(EXIT_FAILURE);
 	}
