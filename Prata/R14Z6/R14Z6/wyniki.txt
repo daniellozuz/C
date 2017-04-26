@@ -1,0 +1,4 @@
+10 Maciej Zielinski 14 10 8 5
+1 Daniel Zuziak 18 2 5 9
+10 Maciej Zielinski 15 1 2 2
+2 Jerzy Stuhr 5 5 1 1
